@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Tracker Pro</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="app-container">
+        <!-- Main Map Area -->
+        <div id="map"></div>
+
+        <!-- Floating UI Panel -->
+        <div class="glass-panel" id="ui-panel">
+            <div class="header">
+                <h1>Pet Tracker <span class="accent">Pro</span></h1>
+                <p>Seguimiento en tiempo real de mascotas y celulares</p>
+            </div>
+            
+            <!-- Auth Section -->
+            <div id="auth-section">
+                <form id="auth-form">
+                    <input type="text" id="username" placeholder="Nombre de Usuario" required>
+                    <input type="password" id="password" placeholder="Contraseña" required>
+                    <div class="btn-group">
+                        <button type="submit" id="btn-login" class="btn primary">Iniciar Sesión</button>
+                        <button type="button" id="btn-register" class="btn secondary">Registrarse</button>
+                    </div>
+                    <p id="auth-msg" class="message"></p>
+                </form>
+            </div>
+
+            <!-- Dashboard Section -->
+            <div id="dashboard-section" class="hidden">
+                <div class="welcome-bar">
+                    <h3>Hola, <span id="user-display-name"></span></h3>
+                    <button id="btn-logout" class="btn text">Salir</button>
+                </div>
+                
+                <div class="controls">
+                    <button id="btn-add-device" class="btn primary full-width">Añadir Dispositivo (Celular)</button>
+                    <button id="btn-load-pois" class="btn secondary full-width mt-2">Mostrar Policia/Vetes/Fiscalias</button>
+                </div>
+
+                <div class="device-list">
+                    <h4>Mis Dispositivos</h4>
+                    <ul id="devices-ul">
+                        <!-- Generado por JS -->
+                    </ul>
+                </div>
+                
+                <div class="simulation-controls mt-2">
+                    <button id="btn-simulate" class="btn danger full-width hidden">Simular Movimiento</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- App Logic -->
+    <script src="js/app.js"></script>
+</body>
+</html>
